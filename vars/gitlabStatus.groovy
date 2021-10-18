@@ -2,11 +2,6 @@
 
 def call(String stageName, String buildStatus) {
 
-    if(stageName == "" || buildStatus == "") {
-        echo "parameter is invalid."
-        return;
-    }
-
     def status = ""
 
     switch(buildStatus.toUpperCase()) {
