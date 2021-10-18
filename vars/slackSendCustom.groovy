@@ -1,10 +1,12 @@
 #!/usr/bin/env groovy
 
+/**
+ * Slack 알림 코드 반복 해결
+ */
 def call() {
-
     def color = ""
 
-    switch(currentBuild.currentResult) {
+    switch (currentBuild.currentResult) {
         case "SUCCESS":
             color = "good"
             break
@@ -22,5 +24,4 @@ Status : ${currentBuild.currentResult}
 URL    : ${env.BUILD_URL}
 Params : ${params} 
 """)
-
 }

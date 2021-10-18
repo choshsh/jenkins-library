@@ -1,10 +1,13 @@
 #!/usr/bin/env groovy
 
+/**
+ * GitLab 측 status 업데이트 코드 반복 해결
+ * @param stageName
+ * @param buildStatus
+ */
 def call(String stageName, String buildStatus) {
-
     def status = ""
-
-    switch(buildStatus.toUpperCase()) {
+    switch (buildStatus.toUpperCase()) {
         case "SUCCESS":
             status = "success"
             break
@@ -15,7 +18,5 @@ def call(String stageName, String buildStatus) {
             status = "falied"
             break
     }
-
     updateGitlabCommitStatus(name: stageName, state: status)
-
 }
