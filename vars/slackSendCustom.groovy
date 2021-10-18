@@ -16,7 +16,7 @@ def call() {
             break
     }
 
-    slackSend(color: status, message: """
+    slackSend(color: color, message: """
 Job    : ${env.JOB_NAME} #${env.BUILD_NUMBER}
 Status : ${currentBuild.currentResult}
 URL    : ${env.BUILD_URL}

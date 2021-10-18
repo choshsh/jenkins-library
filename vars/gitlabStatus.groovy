@@ -6,14 +6,14 @@ def call(String stageName, String buildStatus) {
 
     switch(buildStatus.toUpperCase()) {
         case "SUCCESS":
-            status = "success";
-            break;
+            status = "success"
+            break
         case "PENDING":
-            status = "pending";
-            break;
+            status = "pending"
+            break
         default:
-            status = "falied";
-            break;
+            status = "falied"
+            break
     }
 
     updateGitlabCommitStatus(name: stageName, state: status)
