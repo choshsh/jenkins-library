@@ -5,7 +5,7 @@
  * @param stageName
  * @param buildStatus
  */
-def call(String stageName, String buildStatus) {
+def call(String buildStatus) {
     def status = ""
     switch (buildStatus.toUpperCase()) {
         case "SUCCESS":
@@ -18,5 +18,5 @@ def call(String stageName, String buildStatus) {
             status = "falied"
             break
     }
-    updateGitlabCommitStatus(name: stageName, state: status)
+    updateGitlabCommitStatus(name: STAGE_NAME, state: status)
 }
