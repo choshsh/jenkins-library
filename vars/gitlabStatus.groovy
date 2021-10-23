@@ -6,17 +6,17 @@
  * @param buildStatus
  */
 def call(String buildStatus) {
-    def status = ""
-    switch (buildStatus.toUpperCase()) {
-        case "SUCCESS":
-            status = "success"
-            break
-        case "PENDING":
-            status = "pending"
-            break
-        default:
-            status = "falied"
-            break
-    }
-    updateGitlabCommitStatus(name: STAGE_NAME, state: status)
+  def status = ""
+  switch (buildStatus.toUpperCase()) {
+    case "SUCCESS":
+      status = "success"
+      break
+    case "PENDING":
+      status = "pending"
+      break
+    default:
+      status = "falied"
+      break
+  }
+  updateGitlabCommitStatus(name: STAGE_NAME, state: status)
 }
